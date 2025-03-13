@@ -75,5 +75,7 @@ This project is open-source under the **MIT License**.
 
 ## Author
 
-[Your Name] - [Your GitHub Profile]
+Nima Nadgaran - https://github.com/NimaNadgaran
+www.linkedin.com/in/nima-nadgaran
+
 
