@@ -1,1 +1,1 @@
-# Embedded-Systems-Projects
+# Arduino Temperature Controller
