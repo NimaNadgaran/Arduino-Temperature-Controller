@@ -57,25 +57,25 @@ To install the MAX6675 library:
 
 1. Connect the Hardware:
 
-- Wire the LCD, keypad, MAX6675 thermocouple, and heater to the Arduino Mega as per the pin configuration.
-- Ensure the thermocouple is properly connected to the bio-gel container for accurate temperature readings.
-- Connect the heater to a relay or transistor controlled by the specified digital pin.
+  - Wire the LCD, keypad, MAX6675 thermocouple, and heater to the Arduino Mega as per the pin configuration.
+  - Ensure the thermocouple is properly connected to the bio-gel container for accurate temperature readings.
+  - Connect the heater to a relay or transistor controlled by the specified digital pin.
 
 
 
 2. Upload the Code:
 
-- Copy the provided Arduino code into the Arduino IDE.
-- Connect the Arduino Mega to your computer via USB.
-- Select Arduino Mega or Mega 2560 from Tools > Board in the Arduino IDE.
-- Upload the code to the Arduino.
+  - Copy the provided Arduino code into the Arduino IDE.
+  - Connect the Arduino Mega to your computer via USB.
+  - Select Arduino Mega or Mega 2560 from Tools > Board in the Arduino IDE.
+  - Upload the code to the Arduino.
 
 
 
 3. Verify Connections:
 
-- Ensure all connections are secure and the thermocouple is correctly positioned.
-- Power on the Arduino and verify that the LCD displays "Bio-Gel Maker" on startup.
+  - Ensure all connections are secure and the thermocouple is correctly positioned.
+  - Power on the Arduino and verify that the LCD displays "Bio-Gel Maker" on startup.
 
 
 
@@ -84,14 +84,14 @@ To install the MAX6675 library:
 
 1. Startup:
 
-- The LCD displays "Bio-Gel Maker" for 5 seconds.
-- The system then prompts the user to set the countdown time.
+  - The LCD displays "Bio-Gel Maker" for 5 seconds.
+  - The system then prompts the user to set the countdown time.
 
 
 2. Setting the Timer:
 
-- The user can adjust the countdown time (in hours and minutes) using the keypad.
-- Keypad inputs (analog values):
+  - The user can adjust the countdown time (in hours and minutes) using the keypad.
+  - Keypad inputs (analog values):
 ```
 0: Increase hours.
 513: Decrease hours.
@@ -100,35 +100,35 @@ To install the MAX6675 library:
 732: Confirm the timer setting and proceed to temperature setting.
 ```
 
-- The LCD shows the current time in the format HH:MM:SS.
+  - The LCD shows the current time in the format HH:MM:SS.
 
 
 3. Setting the Temperature:
 
-- After confirming the timer, the user can set the target temperature.
-- Keypad inputs:
+  - After confirming the timer, the user can set the target temperature.
+  - Keypad inputs:
 ```
 0: Increase temperature by 1°C.
 513: Decrease temperature by 1°C.
 732: Confirm the temperature setting and proceed to the main process.
 ```
 
-- The LCD displays the current temperature setting.
+  - The LCD displays the current temperature setting.
 
 
 4. Running the Process:
 
-- Press the keypad button (analog value 732) to start the timer.
-- The system maintains the target temperature by turning the heater on or off based on the thermocouple reading.
-- The LCD displays the remaining time (in HH:MM:SS format) and the target temperature.
-- If the temperature is below the target, the heater turns on; if above or equal, it turns off.
+  - Press the keypad button (analog value 732) to start the timer.
+  - The system maintains the target temperature by turning the heater on or off based on the thermocouple reading.
+  - The LCD displays the remaining time (in HH:MM:SS format) and the target temperature.
+  - If the temperature is below the target, the heater turns on; if above or equal, it turns off.
 
 
 5. Stopping the Process:
 
-- Press the keypad button (analog value 732) again to stop the timer and heater.
-- The LCD displays "Timer Stopped" with a reset instruction.
-- When the countdown reaches zero, the heater turns off, and the process stops automatically.
+  - Press the keypad button (analog value 732) again to stop the timer and heater.
+  - The LCD displays "Timer Stopped" with a reset instruction.
+  - When the countdown reaches zero, the heater turns off, and the process stops automatically.
 
 
 
@@ -136,30 +136,30 @@ To install the MAX6675 library:
 
 1. Libraries:
 
-- *LiquidCrystal.h:* Manages the LCD display.
-- *max6675.h:* Interfaces with the MAX6675 thermocouple for temperature readings.
+  - *LiquidCrystal.h:* Manages the LCD display.
+  - *max6675.h:* Interfaces with the MAX6675 thermocouple for temperature readings.
 
 
 2. Setup:
 
-- Initializes the LCD, serial communication, and heater control pin.
-- Displays the initial message and prompts for timer and temperature settings.
+  - Initializes the LCD, serial communication, and heater control pin.
+  - Displays the initial message and prompts for timer and temperature settings.
 
 
 3. Main Loop:
 
-- Continuously reads keypad input to start/stop the timer.
-- Updates the timer and controls the heater when the countdown is running.
+  - Continuously reads keypad input to start/stop the timer.
+  - Updates the timer and controls the heater when the countdown is running.
 
 
 4. Functions:
 
-- *startTimer():* Starts the countdown and displays "Timer Started".
-- *stopTimer():* Stops the countdown, turns off the heater, and displays "Timer Stopped".
-- *updateTimer():* Updates the countdown every second and refreshes the LCD display.
-- *getTime():* Handles keypad inputs to adjust the countdown time (hours and minutes).
-- *getTemp():* Handles keypad inputs to adjust the target temperature.
-- *changetemp():* Reads the thermocouple and controls the heater to maintain the target temperature.
+  - *startTimer():* Starts the countdown and displays "Timer Started".
+  - *stopTimer():* Stops the countdown, turns off the heater, and displays "Timer Stopped".
+  - *updateTimer():* Updates the countdown every second and refreshes the LCD display.
+  - *getTime():* Handles keypad inputs to adjust the countdown time (hours and minutes).
+  - *getTemp():* Handles keypad inputs to adjust the target temperature.
+  - *changetemp():* Reads the thermocouple and controls the heater to maintain the target temperature.
 
 
 
