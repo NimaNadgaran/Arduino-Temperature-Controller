@@ -62,6 +62,7 @@ To install the MAX6675 library:
 - Connect the heater to a relay or transistor controlled by the specified digital pin.
 
 
+
 2. Upload the Code:
 
 - Copy the provided Arduino code into the Arduino IDE.
@@ -70,10 +71,12 @@ To install the MAX6675 library:
 - Upload the code to the Arduino.
 
 
+
 3. Verify Connections:
 
 - Ensure all connections are secure and the thermocouple is correctly positioned.
 - Power on the Arduino and verify that the LCD displays "Bio-Gel Maker" on startup.
+
 
 
 
