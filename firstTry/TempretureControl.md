@@ -97,120 +97,124 @@ To install the MAX6675 library:
 732: Confirm the timer setting and proceed to temperature setting.
 ```
 
-The LCD shows the current time in the format HH:MM:SS.
+- The LCD shows the current time in the format HH:MM:SS.
 
 
-Setting the Temperature:
+3. Setting the Temperature:
 
-After confirming the timer, the user can set the target temperature.
-Keypad inputs:
+- After confirming the timer, the user can set the target temperature.
+- Keypad inputs:
 ```
 0: Increase temperature by 1°C.
 513: Decrease temperature by 1°C.
 732: Confirm the temperature setting and proceed to the main process.
 ```
 
-The LCD displays the current temperature setting.
+- The LCD displays the current temperature setting.
 
 
-Running the Process:
+4. Running the Process:
 
-Press the keypad button (analog value 732) to start the timer.
-The system maintains the target temperature by turning the heater on or off based on the thermocouple reading.
-The LCD displays the remaining time (in HH:MM:SS format) and the target temperature.
-If the temperature is below the target, the heater turns on; if above or equal, it turns off.
-
-
-Stopping the Process:
-
-Press the keypad button (analog value 732) again to stop the timer and heater.
-The LCD displays "Timer Stopped" with a reset instruction.
-When the countdown reaches zero, the heater turns off, and the process stops automatically.
+- Press the keypad button (analog value 732) to start the timer.
+- The system maintains the target temperature by turning the heater on or off based on the thermocouple reading.
+- The LCD displays the remaining time (in HH:MM:SS format) and the target temperature.
+- If the temperature is below the target, the heater turns on; if above or equal, it turns off.
 
 
+5. Stopping the Process:
 
-Code Explanation
-
-Libraries:
-
-LiquidCrystal.h: Manages the LCD display.
-max6675.h: Interfaces with the MAX6675 thermocouple for temperature readings.
-
-
-Setup:
-
-Initializes the LCD, serial communication, and heater control pin.
-Displays the initial message and prompts for timer and temperature settings.
-
-
-Main Loop:
-
-Continuously reads keypad input to start/stop the timer.
-Updates the timer and controls the heater when the countdown is running.
-
-
-Functions:
-
-startTimer(): Starts the countdown and displays "Timer Started".
-stopTimer(): Stops the countdown, turns off the heater, and displays "Timer Stopped".
-updateTimer(): Updates the countdown every second and refreshes the LCD display.
-getTime(): Handles keypad inputs to adjust the countdown time (hours and minutes).
-getTemp(): Handles keypad inputs to adjust the target temperature.
-changetemp(): Reads the thermocouple and controls the heater to maintain the target temperature.
+- Press the keypad button (analog value 732) again to stop the timer and heater.
+- The LCD displays "Timer Stopped" with a reset instruction.
+- When the countdown reaches zero, the heater turns off, and the process stops automatically.
 
 
 
-Keypad Analog Values
+## Code Explanation
+
+1. Libraries:
+
+- *LiquidCrystal.h:* Manages the LCD display.
+- *max6675.h:* Interfaces with the MAX6675 thermocouple for temperature readings.
+
+
+2. Setup:
+
+- Initializes the LCD, serial communication, and heater control pin.
+- Displays the initial message and prompts for timer and temperature settings.
+
+
+3. Main Loop:
+
+- Continuously reads keypad input to start/stop the timer.
+- Updates the timer and controls the heater when the countdown is running.
+
+
+4. Functions:
+
+- *startTimer():* Starts the countdown and displays "Timer Started".
+- *stopTimer():* Stops the countdown, turns off the heater, and displays "Timer Stopped".
+- *updateTimer():* Updates the countdown every second and refreshes the LCD display.
+- *getTime():* Handles keypad inputs to adjust the countdown time (hours and minutes).
+- *getTemp():* Handles keypad inputs to adjust the target temperature.
+- *changetemp():* Reads the thermocouple and controls the heater to maintain the target temperature.
+
+
+
+## Keypad Analog Values
 The keypad is connected to analog pin A0, and specific analog values correspond to key presses:
 
+```
 0: Increase hours/temperature.
 513: Decrease hours/temperature.
 143: Increase minutes.
 343: Decrease minutes.
 732: Confirm settings or start/stop the timer.
+```
 
-These values may vary depending on your keypad. Test the keypad by printing the analog values to the Serial Monitor (Serial.println(analogRead(A0))) and update the code if necessary.
-Usage Instructions
+These values may vary depending on your keypad. Test the keypad by printing the analog values to the Serial Monitor (*Serial.println(analogRead(A0))*) and update the code if necessary.
 
-Power on the Arduino and wait for the "Bio-Gel Maker" message.
-Use the keypad to set the desired countdown time (hours and minutes).
-Press the confirm key (analog value 732) to proceed to temperature setting.
-Set the target temperature using the keypad.
-Press the confirm key again to start the process.
-The system will maintain the target temperature and display the remaining time.
-Press the confirm key to stop the process manually, or wait for the timer to reach zero.
+## Usage Instructions
 
-Troubleshooting
+1. Power on the Arduino and wait for the "Bio-Gel Maker" message.
+2. Use the keypad to set the desired countdown time (hours and minutes).
+3. Press the confirm key (analog value 732) to proceed to temperature setting.
+4. Set the target temperature using the keypad.
+5. Press the confirm key again to start the process.
+6. The system will maintain the target temperature and display the remaining time.
+7. Press the confirm key to stop the process manually, or wait for the timer to reach zero.
 
-LCD Not Displaying:
-Check the LCD connections and ensure the correct pins are used.
-Adjust the contrast potentiometer on the LCD module.
+## Troubleshooting
 
-
-Keypad Not Responding:
-Verify the keypad is connected to analog pin A0.
-Print analog values to the Serial Monitor to confirm the correct key values.
+- **LCD Not Displaying:**
+  - Check the LCD connections and ensure the correct pins are used.
+  - Adjust the contrast potentiometer on the LCD module.
 
 
-Temperature Not Accurate:
-Ensure the thermocouple is properly connected and positioned.
-Check the MAX6675 module wiring and library installation.
+- **Keypad Not Responding:**
+  - Verify the keypad is connected to analog pin A0.
+  - Print analog values to the Serial Monitor to confirm the correct key values.
 
 
-Heater Not Working:
-Verify the relay or transistor connections.
-Ensure the heater is compatible with the control circuit and power supply.
+- **Temperature Not Accurate:**
+  - Ensure the thermocouple is properly connected and positioned.
+  - Check the MAX6675 module wiring and library installation.
+
+
+- **Heater Not Working:**
+  - Verify the relay or transistor connections. 
+  - Ensure the heater is compatible with the control circuit and power supply.
 
 
 
-Future Improvements
+## Future Improvements
 
-Add hysteresis to the temperature control to prevent rapid heater switching.
-Implement a buzzer to alert when the countdown reaches zero.
-Add error handling for invalid thermocouple readings.
-Support a wider range of keypad inputs or a more user-friendly interface.
+- Add hysteresis to the temperature control to prevent rapid heater switching.
+- Implement a buzzer to alert when the countdown reaches zero.
+- Add error handling for invalid thermocouple readings.
+- Support a wider range of keypad inputs or a more user-friendly interface.
 
-License
+## License
 This project is licensed under the MIT License. See the LICENSE file for details.
-Contributing
+
+## Contributing
 Contributions are welcome! Please open an issue or submit a pull request on GitHub for any improvements or bug fixes.
