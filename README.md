@@ -50,17 +50,11 @@ The code consists of:
   - **Cooling Process**: Turns off heating and allows cooling when required.
 - **Countdown Timer**: Updates and displays the remaining time.
 
-## Future Improvements
-
-- Add **EEPROM storage** to remember the last settings
-- Implement **Buzzer alerts** for process completion
-- Add **Wi-Fi or Bluetooth** control for remote monitoring
-
 ## Installation & Usage
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/your-repo-name.git
+   git clone https://github.com/NimaNadgaran/Arduino-Temperature-Controller.git
    ```
 2. Open the code in **Arduino IDE**.
 3. Connect the Arduino to your computer via USB.
