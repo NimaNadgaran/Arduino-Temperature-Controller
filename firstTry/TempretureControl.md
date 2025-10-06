@@ -1,4 +1,4 @@
-Bio-Gel Maker Arduino Project
+# Bio-Gel Maker Arduino Project
 Overview
 This Arduino project is designed to control a Bio-Gel Maker, a device that maintains a specific temperature for a set duration to facilitate the creation of bio-gel. The system uses an Arduino Mega, a 16x2 LCD display, a keypad for user input, a MAX6675 thermocouple for temperature sensing, and a relay or transistor to control an electric heater. The user can set a countdown timer and a target temperature via the keypad, and the system will maintain the temperature while displaying the remaining time and target temperature on the LCD.
 Features
@@ -20,7 +20,7 @@ Connecting Wires and Breadboard: For assembling the circuit.
 Power Supply: Suitable for the Arduino and heater (ensure compatibility with your heater's power requirements).
 
 Pin Configuration
-
+```
 LCD Pins:
 RS: Pin 8
 EN: Pin 9
@@ -28,13 +28,14 @@ D4: Pin 4
 D5: Pin 5
 D6: Pin 6
 D7: Pin 7
-
+```
 
 Thermocouple (MAX6675):
+```
 DO (Data Out): Pin 21
 CS (Chip Select): Pin 20
 CLK (Clock): Pin 19
-
+```
 
 Heater Control: Pin 20 (digital output for controlling the heater via a relay or transistor).
 Keypad: Connected to analog pin A0 (reads analog values to detect key presses).
@@ -86,12 +87,13 @@ Setting the Timer:
 
 The user can adjust the countdown time (in hours and minutes) using the keypad.
 Keypad inputs (analog values):
+```
 0: Increase hours.
 513: Decrease hours.
 143: Increase minutes.
 343: Decrease minutes.
 732: Confirm the timer setting and proceed to temperature setting.
-
+```
 
 The LCD shows the current time in the format HH:MM:SS.
 
@@ -100,10 +102,11 @@ Setting the Temperature:
 
 After confirming the timer, the user can set the target temperature.
 Keypad inputs:
+```
 0: Increase temperature by 1°C.
 513: Decrease temperature by 1°C.
 732: Confirm the temperature setting and proceed to the main process.
-
+```
 
 The LCD displays the current temperature setting.
 
