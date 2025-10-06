@@ -1,5 +1,6 @@
 # Bio-Gel Maker Arduino Project
-Overview
+# Overview
+
 This Arduino project is designed to control a Bio-Gel Maker, a device that maintains a specific temperature for a set duration to facilitate the creation of bio-gel. The system uses an Arduino Mega, a 16x2 LCD display, a keypad for user input, a MAX6675 thermocouple for temperature sensing, and a relay or transistor to control an electric heater. The user can set a countdown timer and a target temperature via the keypad, and the system will maintain the temperature while displaying the remaining time and target temperature on the LCD.
 Features
 
