@@ -6,89 +6,89 @@ This Arduino project is designed to control a Bio-Gel Maker, a device that maint
 ## Features
 
 - **Countdown Timer:** Allows the user to set a timer (in hours and minutes) for the bio-gel process.
-Temperature Control: Uses a MAX6675 thermocouple to monitor and maintain a user-defined temperature by controlling an electric heater.
-LCD Display: Shows the current status, timer, and temperature settings on a 16x2 LCD.
-Keypad Input: Enables the user to adjust the countdown time and target temperature interactively.
-Start/Stop Functionality: The user can start or stop the process using a specific keypad button.
+- **Temperature Control:** Uses a MAX6675 thermocouple to monitor and maintain a user-defined temperature by controlling an electric heater.
+- **LCD Display:** Shows the current status, timer, and temperature settings on a 16x2 LCD.
+- **Keypad Input:** Enables the user to adjust the countdown time and target temperature interactively.
+- **Start/Stop Functionality:** The user can start or stop the process using a specific keypad button.
 
-Hardware Requirements
+## Hardware Requirements
 
-Arduino Mega: The microcontroller used to run the program.
-16x2 LCD Display: Connected to display the timer, temperature, and system status.
-Keypad: A 4x4 or similar analog keypad for user input (connected to analog pin A0).
-MAX6675 Thermocouple Module: Used to measure the temperature of the bio-gel.
-Electric Heater: Controlled via a relay or transistor connected to a digital pin.
-Connecting Wires and Breadboard: For assembling the circuit.
-Power Supply: Suitable for the Arduino and heater (ensure compatibility with your heater's power requirements).
+- **Arduino Mega:** The microcontroller used to run the program.
+- **16x2 LCD Display:** Connected to display the timer, temperature, and system status.
+- **Keypad:** A 4x4 or similar analog keypad for user input (connected to analog pin A0).
+- **MAX6675 Thermocouple Module:** Used to measure the temperature of the bio-gel.
+- **Electric Heater:** Controlled via a relay or transistor connected to a digital pin.
+- **Connecting Wires and Breadboard:** For assembling the circuit.
+- **Power Supply:** Suitable for the Arduino and heater (ensure compatibility with your heater's power requirements).
 
-Pin Configuration
+- Pin Configuration
 ```
-LCD Pins:
-RS: Pin 8
-EN: Pin 9
-D4: Pin 4
-D5: Pin 5
-D6: Pin 6
-D7: Pin 7
+- LCD Pins:
+- RS: Pin 8
+- EN: Pin 9
+- D4: Pin 4
+- D5: Pin 5
+- D6: Pin 6
+- D7: Pin 7
 ```
 
-Thermocouple (MAX6675):
+- Thermocouple (MAX6675):
 ```
 DO (Data Out): Pin 21
 CS (Chip Select): Pin 20
 CLK (Clock): Pin 19
 ```
 
-Heater Control: Pin 20 (digital output for controlling the heater via a relay or transistor).
-Keypad: Connected to analog pin A0 (reads analog values to detect key presses).
+- Heater Control: Pin 20 (digital output for controlling the heater via a relay or transistor).
+- Keypad: Connected to analog pin A0 (reads analog values to detect key presses).
 
-Libraries Required
+## Libraries Required
 
-LiquidCrystal: For controlling the 16x2 LCD display. Included in the Arduino IDE by default.
-MAX6675: For interfacing with the MAX6675 thermocouple module. Install via the Arduino Library Manager or download from this GitHub repository.
+- **LiquidCrystal:** For controlling the 16x2 LCD display. Included in the Arduino IDE by default.
+- **MAX6675:** For interfacing with the MAX6675 thermocouple module. Install via the Arduino Library Manager or download from this GitHub repository.
 
 To install the MAX6675 library:
 
-Open the Arduino IDE.
-Go to Sketch > Include Library > Manage Libraries.
-Search for "MAX6675" and install the library by Adafruit.
+1. Open the Arduino IDE.
+2. Go to Sketch > Include Library > Manage Libraries.
+3. Search for "MAX6675" and install the library by Adafruit.
 
-Installation
+## Installation
 
-Connect the Hardware:
+1. Connect the Hardware:
 
-Wire the LCD, keypad, MAX6675 thermocouple, and heater to the Arduino Mega as per the pin configuration.
-Ensure the thermocouple is properly connected to the bio-gel container for accurate temperature readings.
-Connect the heater to a relay or transistor controlled by the specified digital pin.
-
-
-Upload the Code:
-
-Copy the provided Arduino code into the Arduino IDE.
-Connect the Arduino Mega to your computer via USB.
-Select Arduino Mega or Mega 2560 from Tools > Board in the Arduino IDE.
-Upload the code to the Arduino.
+- Wire the LCD, keypad, MAX6675 thermocouple, and heater to the Arduino Mega as per the pin configuration.
+- Ensure the thermocouple is properly connected to the bio-gel container for accurate temperature readings.
+- Connect the heater to a relay or transistor controlled by the specified digital pin.
 
 
-Verify Connections:
+2. Upload the Code:
 
-Ensure all connections are secure and the thermocouple is correctly positioned.
-Power on the Arduino and verify that the LCD displays "Bio-Gel Maker" on startup.
-
-
-
-How It Works
-
-Startup:
-
-The LCD displays "Bio-Gel Maker" for 5 seconds.
-The system then prompts the user to set the countdown time.
+- Copy the provided Arduino code into the Arduino IDE.
+- Connect the Arduino Mega to your computer via USB.
+- Select Arduino Mega or Mega 2560 from Tools > Board in the Arduino IDE.
+- Upload the code to the Arduino.
 
 
-Setting the Timer:
+3. Verify Connections:
 
-The user can adjust the countdown time (in hours and minutes) using the keypad.
-Keypad inputs (analog values):
+- Ensure all connections are secure and the thermocouple is correctly positioned.
+- Power on the Arduino and verify that the LCD displays "Bio-Gel Maker" on startup.
+
+
+
+## How It Works
+
+1. Startup:
+
+- The LCD displays "Bio-Gel Maker" for 5 seconds.
+- The system then prompts the user to set the countdown time.
+
+
+2. Setting the Timer:
+
+- The user can adjust the countdown time (in hours and minutes) using the keypad.
+- Keypad inputs (analog values):
 ```
 0: Increase hours.
 513: Decrease hours.
